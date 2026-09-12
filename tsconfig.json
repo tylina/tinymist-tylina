@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@tylina/embed": [
+        "../../packages/embed/src/index.ts"
+      ],
+      "@tylina/embed/*": [
+        "../../packages/embed/src/*"
+      ],
+      "@tylina/node-runtime/*": [
+        "../../packages/node-runtime/src/*"
+      ],
+      "@tylina/editor-host/*": [
+        "../../packages/editor-host/src/*"
+      ],
+      "@tylina/document-intelligence": [
+        "../../packages/document-intelligence/src/index.ts"
+      ],
+      "@tylina/document-intelligence/*": [
+        "../../packages/document-intelligence/src/*"
+      ]
+    },
+    "types": [
+      "node",
+      "vscode"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "name": "tinymist-tylina",
+  "displayName": "Tinymist Tylina",
+  "description": "Edit Typst documents visually in Tinymist previews, with VS Code owning source, workspace and undo.",
+  "version": "0.15.0-alpha.2",
+  "publisher": "tylina",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "extensionDependencies": [
+    "myriad-dreamin.tinymist"
+  ],
+  "main": "./dist/extension.cjs",
+  "activationEvents": [
+    "onLanguage:typst"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "tinymistTylina.open",
+        "title": "Tinymist Tylina: Open Visual Editor",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "tinymistTylina.usePreviewer",
+        "title": "Tinymist Tylina: Use as Tinymist Previewer"
+      },
+      {
+        "command": "tinymistTylina.openSource",
+        "title": "Tinymist Tylina: Open Source Beside",
+        "icon": "$(go-to-file)"
+      }
+    ],
+    "configuration": {
+      "title": "Tinymist Tylina",
+      "properties": {
+        "tinymistTylina.sidecarPath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Optional matching Tylina document engine. Uses the bundled executable by default."
+        }
+      }
+    },
+    "menus": {
+      "editor/title": [
+        {
+          "command": "tinymistTylina.open",
+          "when": "resourceExtname == .typ",
+          "group": "navigation"
+        },
+        {
+          "command": "tinymistTylina.openSource",
+          "when": "activeWebviewPanelId == tylina.tinymist-tylina",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "package": "node scripts/package.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:integration": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "@types/vscode": "^1.100.0",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.28.1",
+    "typescript": "^6.0.3"
+  },
+  "type": "module"
+}

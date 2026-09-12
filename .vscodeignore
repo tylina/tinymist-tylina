@@ -1,0 +1,12 @@
+src/**
+tests/**
+scripts/**
+node_modules/**
+.test-output/**
+.git/**
+.gitignore
+package-lock.json
+tsconfig.json
+*.vsix
+dist/**/*.map
+dist/test-*
