@@ -2,7 +2,7 @@
   "name": "tinymist-tylina",
   "displayName": "Tinymist Tylina",
   "description": "Edit Typst documents visually in Tinymist previews, with VS Code owning source, workspace and undo.",
-  "version": "0.15.1",
+  "version": "0.15.2",
   "publisher": "tylina",
   "license": "UNLICENSED",
   "engines": {
